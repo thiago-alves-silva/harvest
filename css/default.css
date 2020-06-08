@@ -1,0 +1,30 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Graphik";
+  src: url('../font/Graphik-Regular.woff2') format("woff2");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Graphik";
+  src: url('../font/Graphik-Medium.woff2') format("woff2");
+  font-weight: 500;
+}
+
+:root {
+  --primary-color: #4BD7C8;
+  --secundary-color: #99E9DF;
+  --tertiary-color: #CCF4EF;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Graphik";
+  font-weight: 600;
+  color: #262626;
+  background: #FAFAFA;
+}
