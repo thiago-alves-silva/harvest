@@ -4,11 +4,6 @@
   src: url('../font/Graphik-Regular.woff2') format("woff2");
   font-weight: 400;
 }
-@font-face {
-  font-family: "Graphik";
-  src: url('../font/Graphik-Medium.woff2') format("woff2");
-  font-weight: 500;
-}
 
 :root {
   --primary-color: #4BD7C8;
@@ -24,7 +19,13 @@ html {
 }
 body {
   font-family: "Graphik";
+  font-weight: 400;
+  color: #1D1D1D;
+}
+a {
+  display: inline-block;
+  color: inherit;
+  text-align: center;
+  text-decoration: none;
   font-weight: 600;
-  color: #262626;
-  background: #FAFAFA;
 }
