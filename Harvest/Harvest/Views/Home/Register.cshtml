@@ -1,0 +1,66 @@
+@model Harvest.Models.User
+<style class="requested">
+  .content {
+    height: 100%;
+  }
+  form div {
+    width: 100%;
+  }
+  form div.double-field {
+    display: flex;
+    height: unset;
+  }
+  form div.double-field div {
+    margin-bottom: 0;
+  }
+  form div.double-field div:nth-child(1) {
+    margin-right: 10px
+  }
+</style>
+<div class="content">
+    <h3 style="text-align: center;">Cadastre-se para desfrutar da plataforma de gerenciamento de contas mais robusta do mercado.</h3>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true, "")
+        <div>
+            @Html.LabelFor(model => model.nome, new { @class = "placeholder" })
+            @Html.EditorFor(model => model.nome, new { htmlAttributes = new { @class = "validate" } })
+            @Html.ValidationMessageFor(model => model.nome, "", new { @class = "alerta" })
+        </div>
+        <div>
+            @Html.LabelFor(model => model.email, new { @class = "placeholder" })
+            @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "validate" } })
+            @Html.ValidationMessageFor(model => model.email, "", new { @class = "alerta" })
+        </div>
+        <div class="double-field">
+            <div>
+                @Html.LabelFor(model => model.tel, new { @class = "placeholder" })
+                @Html.EditorFor(model => model.tel, new { htmlAttributes = new { @class = "validate" } })
+                @Html.ValidationMessageFor(model => model.tel, "", new { @class = "alerta" })
+            </div>
+            <div>
+                @Html.LabelFor(model => model.cpf, new { @class = "placeholder" })
+                @Html.EditorFor(model => model.cpf, new { htmlAttributes = new { @class = "validate" } })
+                @Html.ValidationMessageFor(model => model.cpf, "", new { @class = "alerta" })
+            </div>
+        </div>
+        <div>
+            @Html.LabelFor(model => model.data, new { @class = "placeholder" })
+            @Html.EditorFor(model => model.data, new { htmlAttributes = new { @class = "validate" } })
+            @Html.ValidationMessageFor(model => model.data, "", new { @class = "alerta" })
+        </div>
+        <div class="double-field">
+            <div>
+                @Html.LabelFor(model => model.senha, new { @class = "placeholder" })
+                @Html.EditorFor(model => model.senha, new { htmlAttributes = new { @class = "validate" } })
+                @Html.ValidationMessageFor(model => model.senha, "", new { @class = "alerta" })
+            </div>
+            <div>
+                @Html.LabelFor(model => model.csenha, new { @class = "placeholder" })
+                @Html.EditorFor(model => model.csenha, new { htmlAttributes = new { @class = "validate" } })
+                @Html.ValidationMessageFor(model => model.csenha, "", new { @class = "alerta" })
+            </div>
+        </div>
+        <button type="submit" name="btnSubmit" value="register">Cadastrar</button>
+    }
+</div>

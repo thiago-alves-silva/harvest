@@ -1,0 +1,54 @@
+﻿@model Harvest.Models.Bill
+<style class="requested">
+    .content {
+        max-width: 450px;
+    }
+
+    form, select {
+        width: 100%;
+    }
+
+    div.radio {
+        display: flex;
+        align-items: center;
+        margin-top: 15px;
+    }
+
+    .content form div.radio input[type="radio"] {
+        margin: 0 15px 0 5px;
+        width: 20px;
+        height: 20px;
+    }
+</style>
+<div class="content">
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true, "")
+        <div>
+            @Html.LabelFor(model => model.cliente)
+            <select style="margin-top: 0;" name="cliente" id="cliente"></select>
+        </div>
+        <div>
+            @Html.LabelFor(model => model.nome, new { @class = "placeholder" })
+            @Html.EditorFor(model => model.nome, new { htmlAttributes = new { @class = "validate" } })
+            @Html.ValidationMessageFor(model => model.nome, "", new { @class = "alerta" })
+        </div>
+        <div>
+            @Html.LabelFor(model => model.valor, new { @class = "placeholder" })
+            @Html.EditorFor(model => model.valor, new { htmlAttributes = new { @class = "validate" } })
+            @Html.ValidationMessageFor(model => model.valor, "", new { @class = "alerta" })
+        </div>
+        <div>
+            @Html.LabelFor(model => model.datav, new { @class = "placeholder" })
+            @Html.EditorFor(model => model.datav, new { htmlAttributes = new { @class = "validate" } })
+            @Html.ValidationMessageFor(model => model.datav, "", new { @class = "alerta" })
+        </div>
+        <div class="radio">
+            <label for="tipoP">Pagar</label>
+            <input type="radio" name="tipo" id="tipoP" value="P">
+            <label for="tipoR">Receber</label>
+            <input type="radio" name="tipo" id="tipoR" value="R">
+        </div>
+        <button type="submit" name="btnSubmit" value="bill">Adicionar</button>
+    }
+</div>

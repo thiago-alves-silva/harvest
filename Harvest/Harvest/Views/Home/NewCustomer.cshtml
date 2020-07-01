@@ -1,0 +1,46 @@
+﻿@model Harvest.Models.Customer
+<style class="requested">
+    .content {
+        max-width: 450px;
+    }
+    form, select {
+        width: 100%;
+    }
+    div.radio {
+        display: flex;
+        align-items: center;
+        margin-top: 15px;
+    }
+</style>
+<div class="content">
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true, "")
+        <div>
+            @Html.LabelFor(model => model.nome, new { @class = "placeholder" })
+            @Html.EditorFor(model => model.nome, new { htmlAttributes = new { @class = "validate" } })
+            @Html.ValidationMessageFor(model => model.nome, "", new { @class = "alerta" })
+        </div>
+        <div>
+            @Html.LabelFor(model => model.cpf, new { @class = "placeholder" })
+            @Html.EditorFor(model => model.cpf, new { htmlAttributes = new { @class = "validate" } })
+            @Html.ValidationMessageFor(model => model.cpf, "", new { @class = "alerta" })
+        </div>
+        <div>
+            @Html.LabelFor(model => model.data, new { @class = "placeholder" })
+            @Html.EditorFor(model => model.data, new { htmlAttributes = new { @class = "validate" } })
+            @Html.ValidationMessageFor(model => model.data, "", new { @class = "alerta" })
+        </div>
+        <div>
+            @Html.LabelFor(model => model.email, new { @class = "placeholder" })
+            @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "validate" } })
+            @Html.ValidationMessageFor(model => model.email, "", new { @class = "alerta" })
+        </div>
+        <div>
+            @Html.LabelFor(model => model.endereco, new { @class = "placeholder" })
+            @Html.EditorFor(model => model.endereco, new { htmlAttributes = new { @class = "validate" } })
+            @Html.ValidationMessageFor(model => model.endereco, "", new { @class = "alerta" })
+        </div>
+        <button type="submit" name="btnSubmit" value="customer">Adicionar</button>
+    }
+</div>
